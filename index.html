@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Moon — Data / AI Portfolio</title>
+  <meta name="description" content="데이터 분석과 머신러닝으로 문제를 푸는 James Moon의 포트폴리오." />
+  <meta name="author" content="James Moon" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="James Moon — Data / AI Portfolio" />
+  <meta property="og:description" content="데이터 분석과 머신러닝으로 문제를 푸는 James Moon의 포트폴리오." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Prevent theme flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (!t) t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">JM<span>.</span></a>
+      <nav class="nav__links" aria-label="주요 메뉴">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="테마 전환" title="테마 전환">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="nav__burger" id="burger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="hero__badge reveal">
+        <span class="dot"></span> 새로운 기회를 찾고 있어요
+      </div>
+      <h1 class="hero__title reveal">
+        데이터로 <span class="grad">의미</span>를 만들고,<br />
+        모델로 <span class="grad">결정</span>을 돕습니다.
+      </h1>
+      <p class="hero__sub reveal">
+        안녕하세요, <strong>James Moon</strong>입니다. 데이터 분석과 머신러닝을 통해
+        복잡한 문제를 명확한 인사이트와 동작하는 제품으로 바꾸는 일을 합니다.
+      </p>
+      <div class="hero__cta reveal">
+        <a href="#projects" class="btn btn--primary">프로젝트 보기</a>
+        <a href="#contact" class="btn btn--ghost">연락하기</a>
+      </div>
+      <div class="hero__stats reveal">
+        <div class="stat"><b data-count="12">0</b><span>완료 프로젝트</span></div>
+        <div class="stat"><b data-count="4">0</b><span>년 경험</span></div>
+        <div class="stat"><b data-count="8">0</b><span>주요 기술</span></div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section container" id="about">
+      <div class="section__head reveal">
+        <span class="eyebrow">01 — About</span>
+        <h2>저에 대해</h2>
+      </div>
+      <div class="about reveal">
+        <p>
+          데이터의 노이즈 속에서 신호를 찾는 일을 좋아합니다. 비즈니스 문제를
+          정의하는 단계부터 데이터 파이프라인 설계, 모델링, 그리고 결과를
+          이해관계자에게 전달하는 과정까지 전 과정을 직접 다룹니다.
+        </p>
+        <p>
+          단순히 정확도가 높은 모델보다, 실제로 의사결정을 바꾸고 제품에
+          탑재되어 가치를 만드는 결과물에 집중합니다. 깔끔한 코드와 재현 가능한
+          실험을 중요하게 생각합니다.
+        </p>
+        <ul class="about__facts">
+          <li><span>위치</span> Seoul, Korea</li>
+          <li><span>관심</span> ML · LLM · Data Viz</li>
+          <li><span>상태</span> 풀타임 구직 중</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section container" id="skills">
+      <div class="section__head reveal">
+        <span class="eyebrow">02 — Skills</span>
+        <h2>기술 스택</h2>
+      </div>
+      <div class="skills">
+        <div class="skill-card reveal">
+          <h3>Languages</h3>
+          <div class="tags">
+            <span>Python</span><span>SQL</span><span>R</span><span>JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>ML / AI</h3>
+          <div class="tags">
+            <span>PyTorch</span><span>scikit-learn</span><span>XGBoost</span><span>LLM / RAG</span><span>Hugging Face</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Data Engineering</h3>
+          <div class="tags">
+            <span>Pandas</span><span>Spark</span><span>Airflow</span><span>dbt</span>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Viz / Tools</h3>
+          <div class="tags">
+            <span>Tableau</span><span>Plotly</span><span>Docker</span><span>AWS</span><span>Git</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section container" id="projects">
+      <div class="section__head reveal">
+        <span class="eyebrow">03 — Projects</span>
+        <h2>주요 프로젝트</h2>
+      </div>
+      <div class="projects">
+        <article class="project reveal">
+          <div class="project__top">
+            <span class="project__num">01</span>
+            <div class="project__links">
+              <a href="#" aria-label="GitHub" title="GitHub">↗ Code</a>
+              <a href="#" aria-label="Demo" title="Demo">↗ Demo</a>
+            </div>
+          </div>
+          <h3>이탈 예측 모델</h3>
+          <p>구독 서비스의 고객 이탈을 예측하는 그래디언트 부스팅 모델. SHAP 기반 해석으로 리텐션 캠페인 ROI를 23% 개선.</p>
+          <div class="tags">
+            <span>Python</span><span>XGBoost</span><span>SHAP</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <span class="project__num">02</span>
+            <div class="project__links">
+              <a href="#" title="GitHub">↗ Code</a>
+              <a href="#" title="Demo">↗ Demo</a>
+            </div>
+          </div>
+          <h3>문서 Q&amp;A RAG 챗봇</h3>
+          <p>사내 문서를 임베딩하고 검색 증강 생성으로 답변하는 LLM 챗봇. 평균 응답 시간 1.2초, 정답률 89%.</p>
+          <div class="tags">
+            <span>LLM</span><span>RAG</span><span>FastAPI</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <span class="project__num">03</span>
+            <div class="project__links">
+              <a href="#" title="GitHub">↗ Code</a>
+              <a href="#" title="Dashboard">↗ Dashboard</a>
+            </div>
+          </div>
+          <h3>실시간 매출 대시보드</h3>
+          <p>Airflow 파이프라인으로 수집한 데이터를 집계해 경영진용 KPI 대시보드 제공. 수작업 리포팅 시간 90% 절감.</p>
+          <div class="tags">
+            <span>Airflow</span><span>dbt</span><span>Tableau</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <span class="project__num">04</span>
+            <div class="project__links">
+              <a href="#" title="GitHub">↗ Code</a>
+              <a href="#" title="Paper">↗ Notes</a>
+            </div>
+          </div>
+          <h3>이미지 분류 파이프라인</h3>
+          <p>전이학습 기반 제품 결함 분류 모델. 데이터 증강과 앙상블로 F1 0.94 달성, 검수 비용 절감.</p>
+          <div class="tags">
+            <span>PyTorch</span><span>CNN</span><span>Docker</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section container" id="experience">
+      <div class="section__head reveal">
+        <span class="eyebrow">04 — Experience</span>
+        <h2>경력 &amp; 학력</h2>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">2023 — 현재</div>
+          <div class="tl-body">
+            <h3>Data Scientist · <span>OOO Company</span></h3>
+            <p>추천 시스템과 수요 예측 모델을 개발하고 운영 환경에 배포. A/B 테스트로 전환율 개선을 검증.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">2021 — 2023</div>
+          <div class="tl-body">
+            <h3>Data Analyst · <span>OOO Startup</span></h3>
+            <p>SQL과 대시보드로 핵심 지표를 정의하고 자동화. 데이터 기반 의사결정 문화를 정착.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-dot"></div>
+          <div class="tl-meta">2017 — 2021</div>
+          <div class="tl-body">
+            <h3>B.S. in Statistics · <span>OOO University</span></h3>
+            <p>통계학 전공, 머신러닝 및 데이터마이닝 부전공.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section container contact" id="contact">
+      <div class="contact__card reveal">
+        <span class="eyebrow">05 — Contact</span>
+        <h2>함께 일해요</h2>
+        <p>새로운 기회, 협업, 또는 그냥 인사도 환영합니다. 편하게 연락 주세요.</p>
+        <a href="mailto:gwm999955@gmail.com" class="btn btn--primary">이메일 보내기</a>
+        <div class="contact__socials">
+          <a href="https://github.com/Jamesmoon00" target="_blank" rel="noopener">GitHub</a>
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:gwm999955@gmail.com">Email</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span>© <span id="year"></span> James Moon</span>
+      <span>Built with HTML · CSS · JS</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
