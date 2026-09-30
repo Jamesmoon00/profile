@@ -73,7 +73,7 @@ h1, h2, h3 { font-family: "Space Grotesk", "Inter", sans-serif; line-height: 1.1
 .nav.scrolled { border-bottom-color: var(--border); }
 .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
 .nav__logo { display: flex; align-items: center; }
-.nav__logo img { height: 32px; width: auto; display: block; }
+.nav__logo img { height: 48px; width: auto; display: block; }
 [data-theme="dark"] .nav__logo img { filter: invert(1) brightness(1.15); }
 .nav__links { display: flex; gap: 28px; }
 .nav__links a {
