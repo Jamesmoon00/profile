@@ -65,5 +65,49 @@ const countIO = new IntersectionObserver(
 );
 counters.forEach((c) => countIO.observe(c));
 
+// ===== Notion database =====
+(async () => {
+  const grid = document.getElementById("notionGrid");
+  const status = document.getElementById("notionStatus");
+  if (!grid) return;
+
+  const escapeHtml = (str) =>
+    String(str).replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
+    );
+
+  try {
+    const res = await fetch("/api/notion");
+    if (!res.ok) throw new Error("request failed");
+    const { items } = await res.json();
+
+    if (!items || !items.length) {
+      status.textContent = "표시할 항목이 없습니다.";
+      return;
+    }
+
+    status.remove();
+    items.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "notion-card";
+      const fieldsHtml = item.fields
+        .map((f) =>
+          f.type === "multi"
+            ? f.value.map((v) => `<span>${escapeHtml(v)}</span>`).join("")
+            : `<span>${escapeHtml(f.value)}</span>`
+        )
+        .join("");
+      card.innerHTML = `
+        <a class="notion-card__link" href="${item.url}" target="_blank" rel="noopener">
+          <h3>${escapeHtml(item.title || "제목 없음")}</h3>
+          <div class="notion-fields">${fieldsHtml}</div>
+        </a>`;
+      grid.appendChild(card);
+    });
+  } catch (err) {
+    status.textContent = "데이터를 불러오지 못했습니다.";
+  }
+})();
+
 // ===== Footer year =====
 document.getElementById("year").textContent = new Date().getFullYear();
