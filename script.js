@@ -65,5 +65,32 @@ const countIO = new IntersectionObserver(
 );
 counters.forEach((c) => countIO.observe(c));
 
+// ===== Project preview slideshow (cycles while hovered) =====
+document.querySelectorAll("[data-slides]").forEach((preview) => {
+  const card = preview.closest(".project");
+  const imgs = preview.querySelectorAll(".project__slides img");
+  const bg = preview.querySelector(".project__preview-bg");
+  const label = preview.querySelector(".project__slide-label");
+  let idx = 0;
+  let timer = null;
+  let resetTimer = null;
+  const show = (i) => {
+    imgs[idx].classList.remove("on");
+    idx = i;
+    imgs[idx].classList.add("on");
+    bg.style.backgroundImage = `url('${imgs[idx].getAttribute("src")}')`;
+    label.textContent = imgs[idx].dataset.label;
+  };
+  card.addEventListener("mouseenter", () => {
+    clearTimeout(resetTimer);
+    timer = setInterval(() => show((idx + 1) % imgs.length), 1000);
+  });
+  card.addEventListener("mouseleave", () => {
+    clearInterval(timer);
+    // 미리보기가 사라진 뒤 첫 화면으로 되돌린다
+    resetTimer = setTimeout(() => show(0), 300);
+  });
+});
+
 // ===== Footer year =====
 document.getElementById("year").textContent = new Date().getFullYear();

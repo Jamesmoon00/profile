@@ -191,6 +191,19 @@ h1, h2, h3 { font-family: "Space Grotesk", "Inter", sans-serif; line-height: 1.1
   max-height: 100%; max-width: 100%;
   object-fit: contain;
 }
+.project__slides { position: relative; width: 100%; height: 100%; }
+.project__preview .project__slides img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.project__preview .project__slides img.on { opacity: 1; }
+.project__slide-label {
+  position: absolute; left: 12px; bottom: 12px;
+  padding: 4px 10px; border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6); color: #fff;
+  font-family: "JetBrains Mono", monospace; font-size: 0.75rem;
+}
 .project__top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
 .project__num { font-family: "JetBrains Mono", monospace; font-size: 0.85rem; color: var(--text-mut); }
 .project__links { display: flex; gap: 14px; }
