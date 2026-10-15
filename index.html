@@ -61,7 +61,7 @@
         <a href="#contact" class="btn btn--ghost">연락하기</a>
       </div>
       <div class="hero__stats reveal">
-        <div class="stat"><b data-count="7">0</b><span>프로젝트</span></div>
+        <div class="stat"><b data-count="8">0</b><span>프로젝트</span></div>
         <div class="stat"><b data-count="3">0</b><span>수상</span></div>
         <div class="stat"><b data-count="2">0</b><span>보유 자격증</span></div>
       </div>
@@ -198,8 +198,30 @@
         </article>
 
         <article class="project reveal">
+          <div class="project__preview" data-slides>
+            <div class="project__preview-bg" style="background-image:url('kb/01.jpg')"></div>
+            <div class="project__slides">
+              <img class="on" src="kb/01.jpg" alt="깨비콜 기술설명서 표지" data-label="01 깨비콜" loading="lazy" />
+              <img src="kb/02.jpg" alt="깨비콜 기술설명서 솔루션 화면" data-label="02 Solution" loading="lazy" />
+              <img src="kb/03.jpg" alt="깨비콜 기술설명서 서비스 흐름 화면" data-label="03 Service Flow" loading="lazy" />
+              <img src="kb/04.jpg" alt="깨비콜 기술설명서 핵심 파이프라인 화면" data-label="04 Core Pipeline" loading="lazy" />
+              <img src="kb/05.jpg" alt="깨비콜 기술설명서 분류 모델 학습 결과 화면" data-label="05 AI Modeling" loading="lazy" />
+            </div>
+            <span class="project__slide-label">01 깨비콜</span>
+          </div>
           <div class="project__top">
             <span class="project__num">05</span>
+          </div>
+          <h3>깨비콜(KB Call)</h3>
+          <p>제8회 Future Finance AI Challenge에 팀 '깨권보호국'으로 출품한 AI 상담 서비스입니다. AI 상담원이 고객 통화를 듣고 문의 주제를 분류·요약해 넘겨 주므로, 상담원에게 연결된 고객이 처음부터 다시 설명하지 않아도 됩니다. AI Hub 금융 상담 데이터에서 16,798종으로 흩어진 상담 목적을 88개 조합으로 정리해 라벨을 만들고, kf-deberta-base를 파인튜닝해 9개 주제 분류기를 학습했습니다(정확도 0.878). 실제 서비스는 첫 마디 직후 배정해야 하므로 들은 발화 수별로 다시 측정했고, 첫 발화만으로 64.7%를 정확도 91.7%로 배정할 수 있음을 확인해 확신이 서는 순간 배정하는 점진적 라우팅을 만들었습니다. 신뢰도가 낮으면 주제를 확정하지 않으며, temperature scaling으로 보정 오차(ECE)를 0.047에서 0.020으로 줄였습니다. Django·WebSocket 위에 STT(Whisper)–분류(ONNX)–요약(Qwen2.5-7B)을 잇고, 요약을 녹음 종료 시점에 미리 계산해 두어 상담원 인계 카드가 3.8초 만에 뜨도록 했습니다.</p>
+          <div class="tags">
+            <span>kf-deberta</span><span>ONNX</span><span>Whisper</span><span>Qwen2.5</span><span>Django Channels</span>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project__top">
+            <span class="project__num">06</span>
           </div>
           <h3>잉마트 매출 성장 제안서</h3>
           <p>가상의 대형마트 거래 데이터 약 260만 건에서 매출을 막는 요인을 찾아 개선안으로 연결한 분석 프로젝트입니다. 발행한 쿠폰 1,135개 중 약 49%가 한 번도 쓰이지 않았고 쿠폰 발행 수와 사용률의 상관계수는 -0.05로, 쿠폰을 많이 발행해도 사용이 늘지 않는다는 것을 확인했습니다. 이를 근거로 쿠폰 사용률이 높은 상위 30개 세부 품목에 쿠폰을 집중하자고 제안했습니다. 고객은 K-means로 5개 군집으로 나누고, 로지스틱 회귀로 이탈 고객을 예측했습니다(AUC 0.71). 분석에 앞서 100개가 넘던 상품 단위 표기를 정규식으로 28개로 통일했습니다.</p>
@@ -210,7 +232,7 @@
 
         <article class="project reveal">
           <div class="project__top">
-            <span class="project__num">06</span>
+            <span class="project__num">07</span>
           </div>
           <h3>119 신고 건수 예측</h3>
           <p>2025 날씨 빅데이터 콘테스트 과제로, 부산 소방재난본부의 일 단위 119 신고 건수를 날씨 데이터와 함께 분석해 예측했습니다. 신고가 몰린 날은 태풍·폭염과 겹친다는 점을 확인하고 폭염특보, 공휴일, 구별 인구, 해안 지역 여부 같은 외부 데이터를 붙였으며, 통계 검정으로 유의한 변수만 남겼습니다. 읍면동별 토지 용도와 해안선 지리 데이터로 지역을 6개 군집으로 나눴습니다(실루엣 점수 0.963). SHAP으로 기여도가 낮은 변수를 빼고 UMAP 차원 축소, 월별 주기성을 반영한 샘플 가중치, LightGBM·XGBoost·ExtraTrees 평균 앙상블을 더해 RMSE를 1.64(XGBoost 단일 모델)에서 1.23으로 낮췄습니다.</p>
@@ -221,7 +243,7 @@
 
         <article class="project reveal">
           <div class="project__top">
-            <span class="project__num">07</span>
+            <span class="project__num">08</span>
           </div>
           <h3>주류 소매 체인 재고·수익성 개선 제안</h3>
           <p>매장 80여 곳, 제품 1만 1천여 종을 다루는 가상의 주류 소매 체인 데이터로 재고 관리와 수익성 문제를 분석했습니다. 판매·매입·기초 재고를 하나의 이벤트 흐름으로 합쳐 매장×상품 단위의 일별 재고 추적 테이블을 만들고, 기말 재고와 맞춰 보며 어느 테이블을 기준으로 삼을지 검증했습니다. 이를 바탕으로 과잉 재고와 품절이 반복되는 상품을 찾아 안전재고와 재주문점(ROP) 기반 자동 발주를 제안하고 시뮬레이션으로 효과를 확인했습니다. 수익성 쪽에서는 매장별 매출·총이익률(GMR) 4사분면 분석과 의사결정나무로 와인 매출 비중이 34.67%를 넘으면 GMR이 높아진다는 점을 찾았고, 와인 매출이 꺾이는 수요일에 최대 10% 할인하는 프로모션을 제안했습니다.</p>
